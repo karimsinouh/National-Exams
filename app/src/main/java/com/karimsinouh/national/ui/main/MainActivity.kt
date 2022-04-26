@@ -1,0 +1,44 @@
+package com.karimsinouh.national.ui.main
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.karimsinouh.national.ui.theme.NationalTheme
+
+class MainActivity : ComponentActivity() {
+
+    lateinit var nav:NavHostController
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            nav= rememberNavController()
+            Content()
+        }
+    }
+
+
+    @Composable
+    private fun Content() {
+        NationalTheme {
+
+            window.statusBarColor=MaterialTheme.colors.surface.toArgb()
+
+            Scaffold(
+                topBar = { MainTopBar() },
+                content={ MainNavHost() },
+                backgroundColor = MaterialTheme.colors.background,
+            )
+
+        }
+    }
+}
