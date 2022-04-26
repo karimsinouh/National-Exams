@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.karimsinouh.national.ui.theme.NationalTheme
+import com.karimsinouh.national.util.Screens
 
 class MainActivity : ComponentActivity() {
 
@@ -34,9 +35,19 @@ class MainActivity : ComponentActivity() {
             window.statusBarColor=MaterialTheme.colors.surface.toArgb()
 
             Scaffold(
+                backgroundColor = MaterialTheme.colors.background,
                 topBar = { MainTopBar() },
                 content={ MainNavHost() },
-                backgroundColor = MaterialTheme.colors.background,
+                bottomBar = {
+                    MainBottomBar(
+                        selectedRoute = nav.currentDestination?.route ?: Screens.Home.route,
+                        onNavigation = {
+                            nav.navigate(it.route){
+                                popUpTo(Screens.Home.route)
+                            }
+                        }
+                    )
+                }
             )
 
         }
