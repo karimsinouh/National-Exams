@@ -3,7 +3,9 @@ package com.karimsinouh.national.ui.home
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import com.karimsinouh.national.ui.main.MainActivity
@@ -13,20 +15,30 @@ import com.karimsinouh.national.util.ScreenState
 fun MainActivity.Home() {
 
     when(vm.subjectsState){
-        ScreenState.ERROR -> Unit
+        ScreenState.ERROR -> Text(text = vm.subjectsState.message?.message ?: "")
         ScreenState.PROGRESS -> CircularProgressIndicator()
         ScreenState.SUCCESS -> Unit
-        ScreenState.IDLE -> {
-            LazyColumn(
-                verticalArrangement = Arrangement.spacedBy(12.dp),
-                contentPadding = PaddingValues(12.dp)
-            ){
+        ScreenState.IDLE -> Content()
+    }
 
-                items(20){
-                    SubjectItem()
-                }
+}
+
+@Composable
+private fun MainActivity.Content() {
+
+    LazyColumn(
+        verticalArrangement = Arrangement.spacedBy(12.dp),
+        contentPadding = PaddingValues(12.dp)
+    ){
+
+        items(
+            items = vm.subjects,
+        ){item->
+            SubjectItem(item){
+
             }
         }
+
     }
 
 }
