@@ -4,6 +4,7 @@ import android.os.AsyncTask
 import android.util.Log
 import com.karimsinouh.national.data.Subject
 import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
 import javax.inject.Inject
 
 class GetSubjects @Inject constructor() {
@@ -13,14 +14,13 @@ class GetSubjects @Inject constructor() {
     suspend operator fun invoke(
         listener:(Result<List<Subject>>)->Unit
     ){
-
-        val idfk=Execute(listener).execute()
-
+        Execute(listener).execute()
     }
 
     private inner class Execute(
         val listener:(Result<List<Subject>>)->Unit
     ):AsyncTask<Void,Void,List<Subject>>(){
+
         override fun doInBackground(vararg p0: Void?): List<Subject> {
 
             try {
@@ -45,7 +45,6 @@ class GetSubjects @Inject constructor() {
             }
             return emptyList()
         }
-
 
     }
 

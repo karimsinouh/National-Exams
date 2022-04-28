@@ -20,6 +20,7 @@ sealed class Screens(
     object Home:Screens("home", R.string.home, Icons.Default.Home)
     object Downloads:Screens("downloads", R.string.downloads, drawable = R.drawable.ic_download)
     object Menu:Screens("menu",R.string.more,Icons.Default.Menu)
+    object Exams:Screens("exams",R.string.exams)
 
     object Get {
         val bottomNavigationItems= listOf(Home,Downloads,Menu)
