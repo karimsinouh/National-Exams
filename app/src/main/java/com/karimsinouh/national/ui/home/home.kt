@@ -7,17 +7,24 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.karimsinouh.national.R
 import com.karimsinouh.national.ui.main.MainActivity
 import com.karimsinouh.national.util.ScreenState
 import com.karimsinouh.national.util.Screens
+import com.karimsinouh.national.util.reusableComposables.CenterProgress
+import com.karimsinouh.national.util.reusableComposables.MessageScreen
 
 @Composable
 fun MainActivity.Home() {
 
     when(vm.subjectsState){
-        ScreenState.ERROR -> Text(text = vm.subjectsState.message?.message ?: "")
-        ScreenState.PROGRESS -> CircularProgressIndicator()
+        ScreenState.ERROR -> MessageScreen(
+            title = stringResource(R.string.error_happened),
+            text = vm.subjectsState.message?.message?:""
+        )
+        ScreenState.PROGRESS -> CenterProgress()
         ScreenState.SUCCESS -> Unit
         ScreenState.IDLE -> Content()
     }
