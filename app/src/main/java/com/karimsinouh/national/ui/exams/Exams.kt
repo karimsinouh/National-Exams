@@ -52,9 +52,11 @@ private fun MainActivity.Content(exams:List<Exam>){
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ){
         items(exams){exam->
-            ExamItem(exam = exam) {
-
-            }
+            ExamItem(
+                exam = exam,
+                normal = {},
+                rattrapage = {}
+            )
         }
     }
 }
