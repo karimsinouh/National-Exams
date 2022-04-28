@@ -66,13 +66,16 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
 
 
+    //navigation
     implementation "androidx.navigation:navigation-compose:$nav_version"
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
 
     implementation "io.coil-kt:coil-compose:2.0.0-rc03"
 
     //dependency injection
     implementation "com.google.dagger:hilt-android:2.38.1"
     kapt "com.google.dagger:hilt-compiler:2.38.1"
+
 
     //web scraping
     implementation 'org.jsoup:jsoup:1.14.3'

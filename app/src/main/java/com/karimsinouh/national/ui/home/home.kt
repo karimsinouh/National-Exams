@@ -36,7 +36,7 @@ private fun MainActivity.Content() {
             items = vm.subjects,
         ){item->
             SubjectItem(item){
-                vm.examUrl=item.url
+                vm.examsUrl=item.url
                 nav.navigate(Screens.Exams.route)
             }
         }

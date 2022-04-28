@@ -20,9 +20,7 @@ class MainViewModel @Inject constructor(
     private val repo: ExamsRepository
 ) :ViewModel() {
 
-    var examUrl:String?=null
-    val exams = mutableStateListOf<Exam>()
-    var examsState by mutableStateOf(ScreenState.PROGRESS)
+    var examsUrl:String? = null
 
     val subjects = mutableStateListOf<Subject>()
     var subjectsState by mutableStateOf(ScreenState.PROGRESS)
@@ -44,31 +42,6 @@ class MainViewModel @Inject constructor(
             }
 
         }
-    }
-
-    fun loadExams()=viewModelScope.launch{
-        delay(1000)
-        if (examUrl==null)
-            examsState=ScreenState.ERROR.apply {
-                message = Throwable("Something went wrong")
-            }
-        else
-            repo.getExams(examUrl!!){result ->
-
-                result.onSuccess {
-                    exams.clear()
-                    exams.addAll(it)
-                    examsState=ScreenState.IDLE
-                }
-
-                result.onFailure {
-                    examsState=ScreenState.ERROR.apply {
-                        message = it
-                    }
-                }
-
-            }
-
     }
 
 }
