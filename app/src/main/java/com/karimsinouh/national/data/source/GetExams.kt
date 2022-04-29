@@ -57,9 +57,6 @@ class GetExams @Inject constructor() {
                         null
                     }
 
-                    Log.d("rattrapage",rattrapage?:"no")
-                    Log.d("normal",normal?:"no")
-
                     Exam(
                         name=name?:"NOT AVAILABLE",
                         normal = normal,
