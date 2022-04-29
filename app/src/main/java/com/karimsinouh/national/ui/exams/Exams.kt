@@ -14,6 +14,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.karimsinouh.national.R
 import com.karimsinouh.national.data.Exam
 import com.karimsinouh.national.ui.main.MainActivity
+import com.karimsinouh.national.ui.viewExam.ViewExamActivity
 import com.karimsinouh.national.util.ScreenState
 import com.karimsinouh.national.util.reusableComposables.CenterProgress
 import com.karimsinouh.national.util.reusableComposables.MessageScreen
@@ -52,11 +53,9 @@ private fun MainActivity.Content(exams:List<Exam>){
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ){
         items(exams){exam->
-            ExamItem(
-                exam = exam,
-                normal = {},
-                rattrapage = {}
-            )
+            ExamItem(exam){
+                ViewExamActivity.open(this@Content,exam,it)
+            }
         }
     }
 }

@@ -50,17 +50,20 @@ class GetExams @Inject constructor() {
                     }
 
 
-                    //istidrakia
-                    val istidrakya=  try {
+                    //rattrapage
+                    val rattrapage=  try {
                         tr.getElementsByTag("a")[1]?.attr("href")
                     }catch (e:Exception){
                         null
                     }
 
+                    Log.d("rattrapage",rattrapage?:"no")
+                    Log.d("normal",normal?:"no")
+
                     Exam(
                         name=name?:"NOT AVAILABLE",
                         normal = normal,
-                        istidrakia = istidrakya
+                        rattrapage = rattrapage
                     )
                 }
 

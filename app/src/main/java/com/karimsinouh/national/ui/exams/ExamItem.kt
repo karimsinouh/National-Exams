@@ -14,15 +14,16 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.karimsinouh.national.R
 import com.karimsinouh.national.data.Exam
 
 @Composable
 fun ExamItem(
     exam:Exam,
-    normal:()->Unit,
-    rattrapage:()->Unit
+    onClick:(normal:Boolean)->Unit,
 ) {
     
     var expanded by remember{
@@ -65,25 +66,29 @@ fun ExamItem(
 
                     Divider(color = contentColor.copy(alpha = 0.5f))
 
-                    Text(
-                        text = "Normal",
-                        modifier = Modifier
-                            .clickable(onClick = normal)
-                            .padding(12.dp)
-                            .fillMaxWidth(),
-                        color = contentColor
-                    )
+                    exam.normal?.let {
+                        Text(
+                            text = stringResource(id = R.string.normal),
+                            modifier = Modifier
+                                .clickable { onClick(true) }
+                                .padding(12.dp)
+                                .fillMaxWidth(),
+                            color = contentColor
+                        )
+                    }
 
-                    Divider(color = contentColor.copy(alpha = 0.5f))
+                    exam.rattrapage?.let{
+                        Divider(color = contentColor.copy(alpha = 0.5f))
 
-                    Text(
-                        text = "Rattrapage",
-                        modifier = Modifier
-                            .clickable(onClick = rattrapage)
-                            .padding(12.dp)
-                            .fillMaxWidth(),
-                        color = contentColor
-                    )
+                        Text(
+                            text = stringResource(id = R.string.rattrapage),
+                            modifier = Modifier
+                                .clickable { onClick(false) }
+                                .padding(12.dp)
+                                .fillMaxWidth(),
+                            color = contentColor
+                        )
+                    }
 
                 }
             }

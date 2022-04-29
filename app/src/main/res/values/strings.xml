@@ -6,4 +6,6 @@
     <string name="exams">Exams</string>
     <string name="error_happened">Something Wrong Happened</string>
     <string name="got_it">Got it</string>
+    <string name="normal">Normal</string>
+    <string name="rattrapage">Rattrapage</string>
 </resources>
