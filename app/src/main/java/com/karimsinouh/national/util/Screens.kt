@@ -21,6 +21,9 @@ sealed class Screens(
     object Downloads:Screens("downloads", R.string.downloads, drawable = R.drawable.ic_download)
     object Menu:Screens("menu",R.string.more,Icons.Default.Menu)
     object Exams:Screens("exams",R.string.exams)
+    object ViewOfflineExam:Screens("offlineExams/{id}",R.string.offline){
+        fun constructRoute(id:Long)="offlineExams/$id"
+    }
 
     object Get {
         val bottomNavigationItems= listOf(Home,Downloads,Menu)

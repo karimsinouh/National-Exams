@@ -1,5 +1,7 @@
 package com.karimsinouh.national.ui.main
 
+import android.app.DownloadManager
+import android.net.Uri
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateListOf
@@ -19,6 +21,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val repo: ExamsRepository,
+    private val downloadManager: DownloadManager,
 ) :ViewModel() {
 
     var examsUrl:String? = null
@@ -45,6 +48,10 @@ class MainViewModel @Inject constructor(
             }
 
         }
+    }
+
+    fun getUri(id:Long): Uri {
+        return downloadManager.getUriForDownloadedFile(id)
     }
 
 }

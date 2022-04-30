@@ -1,5 +1,6 @@
 package com.karimsinouh.national.ui.viewExam
 
+import android.net.Uri
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.compose.animation.AnimatedVisibility
@@ -84,6 +85,24 @@ fun PdfReader(stream:InputStream?) {
             factory = {context->
                 PDFView(context,null).apply {
                     fromStream(stream).load()
+                }
+            },
+            modifier=Modifier.fillMaxSize()
+        )
+    else
+        MessageScreen(
+            title = stringResource(id = R.string.error_happened),
+            text = stringResource(id = R.string.try_again)
+        )
+}
+
+@Composable
+fun PdfReader(uri:Uri?) {
+    if (uri!=null)
+        AndroidView(
+            factory = {context->
+                PDFView(context,null).apply {
+                    fromUri(uri).load()
                 }
             },
             modifier=Modifier.fillMaxSize()

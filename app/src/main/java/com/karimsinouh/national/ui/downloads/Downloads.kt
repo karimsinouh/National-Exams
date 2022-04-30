@@ -11,6 +11,7 @@ import androidx.compose.ui.unit.dp
 import com.karimsinouh.national.R
 import com.karimsinouh.national.data.base.ExamEntity
 import com.karimsinouh.national.ui.main.MainActivity
+import com.karimsinouh.national.util.Screens
 import com.karimsinouh.national.util.reusableComposables.MessageScreen
 
 @Composable
@@ -33,7 +34,7 @@ private fun MainActivity.Content(exams:List<ExamEntity>){
     ){
         items(exams){exam->
             DownloadedItem(item = exam) {
-
+                nav.navigate(Screens.ViewOfflineExam.constructRoute(exam.downloadReferenceId))
             }
         }
     }
