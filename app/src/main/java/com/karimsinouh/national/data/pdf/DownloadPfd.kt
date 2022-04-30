@@ -1,4 +1,4 @@
-package com.karimsinouh.national.util
+package com.karimsinouh.national.data.pdf
 
 import android.app.DownloadManager
 import android.content.Context

@@ -3,6 +3,7 @@ package com.karimsinouh.national.ui.main
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.karimsinouh.national.ui.downloads.Downloads
 import com.karimsinouh.national.ui.exams.Exams
 import com.karimsinouh.national.ui.home.Home
 import com.karimsinouh.national.util.Screens
@@ -24,6 +25,12 @@ fun MainActivity.MainNavHost() {
             route=Screens.Exams.route
         ){
             Exams()
+        }
+
+        composable(
+            route = Screens.Downloads.route
+        ){
+            Downloads()
         }
 
 

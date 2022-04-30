@@ -5,15 +5,21 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.karimsinouh.national.data.base.ExamEntity
+import com.karimsinouh.national.data.base.ExamsDatabase
 import com.karimsinouh.national.data.pdf.GetPdf
 import com.karimsinouh.national.util.ScreenState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.io.InputStream
 import javax.inject.Inject
 
 @HiltViewModel
 class ViewExamViewModel @Inject constructor(
     private val getPdf: GetPdf,
+    private val database: ExamsDatabase,
 ):ViewModel() {
 
     var pdf by mutableStateOf<InputStream?>(null)
@@ -38,6 +44,13 @@ class ViewExamViewModel @Inject constructor(
 
     fun download(url:String,title:String){
         downloadId=getPdf.downloadPfd(url, title)
+        storeInDatabase(title)
+    }
+
+    private fun storeInDatabase(title:String)=viewModelScope.launch{
+        delay(100)
+        val item=ExamEntity(title,downloadId)
+        database.downloadedExams().insert(item)
     }
 
 }

@@ -1,6 +1,5 @@
 package com.karimsinouh.national.data.pdf
 
-import com.karimsinouh.national.util.DownloadPfd
 import javax.inject.Inject
 import javax.inject.Singleton
 
