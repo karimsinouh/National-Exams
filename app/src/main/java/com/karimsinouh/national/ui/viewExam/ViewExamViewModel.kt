@@ -1,16 +1,13 @@
 package com.karimsinouh.national.ui.viewExam
 
-import android.content.Context
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.karimsinouh.national.data.pdf.GetPdf
 import com.karimsinouh.national.util.ScreenState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.launch
 import java.io.InputStream
 import javax.inject.Inject
 
@@ -21,6 +18,7 @@ class ViewExamViewModel @Inject constructor(
 
     var pdf by mutableStateOf<InputStream?>(null)
     var state by mutableStateOf(ScreenState.PROGRESS)
+    var downloadId by mutableStateOf<Long>(1)
 
     fun loadStream(url:String){
         if (pdf==null)
@@ -36,6 +34,10 @@ class ViewExamViewModel @Inject constructor(
                 }
 
             }
+    }
+
+    fun download(url:String,title:String){
+        downloadId=getPdf.downloadPfd(url, title)
     }
 
 }

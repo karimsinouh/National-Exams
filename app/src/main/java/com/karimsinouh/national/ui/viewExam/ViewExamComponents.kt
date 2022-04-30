@@ -2,11 +2,13 @@ package com.karimsinouh.national.ui.viewExam
 
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Done
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -19,16 +21,14 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.github.barteksc.pdfviewer.PDFView
 import com.karimsinouh.national.R
 import com.karimsinouh.national.util.reusableComposables.MessageScreen
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import java.io.InputStream
 
 @Composable
 fun ViewExamTopBar(
-    title:String,
-    onBackPressed:()->Unit,
-    onDownload:()->Unit,
+    title: String,
+    onBackPressed: () -> Unit,
+    onDownload: () -> Unit,
+    downloaded: Boolean,
 ) {
 
     Column{
@@ -55,8 +55,17 @@ fun ViewExamTopBar(
                     .weight(0.9f)
             )
 
-            IconButton(onClick = onDownload) {
-                Icon(painter = painterResource(id = R.drawable.ic_download), contentDescription = null)
+            IconButton(onClick = { if (!downloaded) onDownload() }) {
+
+                AnimatedVisibility(visible = downloaded) {
+                    Icon(imageVector = Icons.Default.Done, contentDescription = null)
+                }
+
+
+                AnimatedVisibility(visible = !downloaded) {
+                    Icon(painter = painterResource(id = R.drawable.ic_download), contentDescription = null)
+                }
+
             }
 
         }

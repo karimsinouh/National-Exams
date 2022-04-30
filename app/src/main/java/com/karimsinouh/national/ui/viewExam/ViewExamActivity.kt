@@ -94,10 +94,16 @@ class ViewExamActivity: ComponentActivity() {
 
     @Composable
     private fun TopBar(){
+
+        val downloaded=vm.downloadId!=1L
+
         ViewExamTopBar(
             title = title,
             onBackPressed = ::finish,
-            onDownload = {}
+            onDownload = {
+                vm.download(url, title)
+            },
+            downloaded=downloaded
         )
     }
 

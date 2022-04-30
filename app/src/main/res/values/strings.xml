@@ -9,4 +9,6 @@
     <string name="normal">Normal</string>
     <string name="rattrapage">Rattrapage</string>
     <string name="try_again">Please try again later</string>
+    <string name="downloading_exam">Downloading Exam...</string>
+    <string name="couldnt_download">Couldn\'t download this Exam, try again later</string>
 </resources>
