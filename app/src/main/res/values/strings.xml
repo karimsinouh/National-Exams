@@ -4,12 +4,12 @@
     <string name="downloads">Downloads</string>
     <string name="more">More</string>
     <string name="exams">Exams</string>
-    <string name="error_happened">Something Wrong Happened</string>
+    <string name="error_happened">Something Went Wrong</string>
     <string name="got_it">Got it</string>
-    <string name="normal">Normal</string>
-    <string name="rattrapage">Rattrapage</string>
+    <string name="normal">الدورة العادية</string>
+    <string name="rattrapage">الدورة الإستدراكية</string>
     <string name="try_again">Please try again later</string>
-    <string name="downloading_exam">Downloading Exam...</string>
+    <string name="downloading_exam">Downloading Exam…</string>
     <string name="couldnt_download">Couldn\'t download this Exam, try again later</string>
     <string name="no_downloads">You haven\'t downloaded any exams yet</string>
     <string name="offline">Offline</string>

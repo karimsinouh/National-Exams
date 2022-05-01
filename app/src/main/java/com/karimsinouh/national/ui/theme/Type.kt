@@ -11,5 +11,5 @@ import com.karimsinouh.national.R
 
 // Set of Material typography styles to start with
 val Typography = Typography(
-    defaultFontFamily = FontFamily(Font(R.font.cairo))
+    defaultFontFamily = FontFamily(Font(R.font.cairo)),
 )

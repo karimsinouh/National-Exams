@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.karimsinouh.national.R
 import com.karimsinouh.national.data.base.ExamEntity
@@ -32,6 +33,7 @@ fun DownloadedItem(
             Text(
                 text = item.title,
                 modifier = Modifier.weight(0.9f),
+                textAlign = TextAlign.Right
             )
 
             Icon(painter = painterResource(id = R.drawable.ic_download), contentDescription = null)

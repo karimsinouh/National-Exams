@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.karimsinouh.national.R
@@ -50,7 +51,8 @@ fun ExamItem(
                 Text(
                     text = exam.name,
                     modifier = Modifier.weight(0.9f),
-                    color = contentColor
+                    color = contentColor,
+                    textAlign = TextAlign.Right
                 )
 
                 val icon=if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown
@@ -73,7 +75,8 @@ fun ExamItem(
                                 .clickable { onClick(true) }
                                 .padding(12.dp)
                                 .fillMaxWidth(),
-                            color = contentColor
+                            color = contentColor,
+                            textAlign = TextAlign.Right
                         )
                     }
 
@@ -86,7 +89,8 @@ fun ExamItem(
                                 .clickable { onClick(false) }
                                 .padding(12.dp)
                                 .fillMaxWidth(),
-                            color = contentColor
+                            color = contentColor,
+                            textAlign = TextAlign.Right
                         )
                     }
 
