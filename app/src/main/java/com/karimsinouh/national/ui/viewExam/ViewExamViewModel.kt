@@ -1,5 +1,6 @@
 package com.karimsinouh.national.ui.viewExam
 
+import android.content.Context
 import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -10,7 +11,9 @@ import com.karimsinouh.national.data.base.ExamEntity
 import com.karimsinouh.national.data.base.ExamsDatabase
 import com.karimsinouh.national.data.pdf.GetPdf
 import com.karimsinouh.national.util.ScreenState
+import com.karimsinouh.national.util.ads.GetAdRequest
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.io.InputStream
@@ -20,7 +23,10 @@ import javax.inject.Inject
 class ViewExamViewModel @Inject constructor(
     private val getPdf: GetPdf,
     private val database: ExamsDatabase,
+    @ApplicationContext private val context: Context
 ):ViewModel() {
+
+    val adRequest=GetAdRequest(context)
 
     var pdf by mutableStateOf<InputStream?>(null)
     var state by mutableStateOf(ScreenState.PROGRESS)

@@ -15,6 +15,8 @@ import com.karimsinouh.national.R
 import com.karimsinouh.national.data.Exam
 import com.karimsinouh.national.ui.theme.NationalTheme
 import com.karimsinouh.national.util.ScreenState
+import com.karimsinouh.national.util.ads.AnchoredAdaptiveBanner
+import com.karimsinouh.national.util.ads.Banner
 import com.karimsinouh.national.util.reusableComposables.CenterProgress
 import com.karimsinouh.national.util.reusableComposables.MessageScreen
 import dagger.hilt.android.AndroidEntryPoint
@@ -69,7 +71,13 @@ class ViewExamActivity: ComponentActivity() {
 
             Scaffold(
                 topBar = {TopBar()},
-                backgroundColor = MaterialTheme.colors.background
+                backgroundColor = MaterialTheme.colors.background,
+                bottomBar = {
+                    AnchoredAdaptiveBanner(
+                        adUnitId = stringResource(id = R.string.view_pdf_banner),
+                        adRequest = vm.adRequest
+                    )
+                }
             ) {
 
                 when(vm.state){
