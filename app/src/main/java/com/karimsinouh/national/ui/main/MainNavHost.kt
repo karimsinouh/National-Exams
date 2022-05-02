@@ -12,6 +12,7 @@ import com.karimsinouh.national.R
 import com.karimsinouh.national.ui.downloads.Downloads
 import com.karimsinouh.national.ui.exams.Exams
 import com.karimsinouh.national.ui.home.Home
+import com.karimsinouh.national.ui.menu.Menu
 import com.karimsinouh.national.ui.viewOfflineExam.ViewOfflineExam
 import com.karimsinouh.national.util.Screens
 import com.karimsinouh.national.util.ads.AnchoredAdaptiveBanner
@@ -56,6 +57,12 @@ fun MainActivity.MainNavHost() {
             ){
                 val id=it.arguments?.getLong("id")
                 ViewOfflineExam(id = id)
+            }
+
+            composable(
+                route = Screens.Menu.route
+            ){
+                Menu()
             }
 
 

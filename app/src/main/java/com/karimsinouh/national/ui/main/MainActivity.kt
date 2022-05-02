@@ -15,9 +15,12 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration
 import com.karimsinouh.national.ui.theme.NationalTheme
 import com.karimsinouh.national.util.Screens
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -34,6 +37,13 @@ class MainActivity : ComponentActivity() {
             nav= rememberNavController()
             Content()
         }
+        requestTestAds()
+    }
+
+
+    private fun requestTestAds(){
+        val configs=RequestConfiguration.Builder().setTestDeviceIds(listOf("CB7256F8AC9A39A0DAC57B133AAC720F")).build()
+        MobileAds.setRequestConfiguration(configs)
     }
 
 

@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/compose-model-1651511685076.xml" value="0.11944444444444445" />
         <entry key="app/src/main/res/drawable/ic_bird.xml" value="0.11944444444444445" />
+        <entry key="app/src/main/res/drawable/ic_bird_medium.xml" value="0.11944444444444445" />
       </map>
     </option>
   </component>

@@ -13,4 +13,6 @@
     <string name="couldnt_download">Couldn\'t download this Exam, try again later</string>
     <string name="no_downloads">You haven\'t downloaded any exams yet</string>
     <string name="offline">Offline</string>
+    <string name="rate">Rate</string>
+    <string name="app_description">التطبيق يحتوي على جميع الإمتحانات الوطنية للسنوات السابقة مع التصحيح لجميع الشعب العلمية و الأدبية ثانية باك. </string>
 </resources>
