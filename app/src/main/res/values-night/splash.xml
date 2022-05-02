@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.Splash" parent="Theme.SplashScreen">
+
+        <item name="splashScreenIconSize">24dp</item>
+
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_bird</item>
+
+        <item name="android:windowSplashScreenBackground" tools:targetApi="s">#0E0E0E</item>
+
+        <item name="postSplashScreenTheme">@style/Theme.National.NoActionBar</item>
+
+    </style>
+
+</resources>
