@@ -3,6 +3,7 @@ package com.karimsinouh.national.data.source
 import android.os.AsyncTask
 import android.util.Log
 import com.karimsinouh.national.data.Subject
+import okio.IOException
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import javax.inject.Inject
@@ -34,13 +35,12 @@ class GetSubjects @Inject constructor() {
                     val icon= it.getElementsByTag("img")[0].attr("src")?:""
                     val url= it.getElementsByTag("a")[0].attr("href")?:""
 
-                    Log.d("wtf","name: $name, icon: $icon")
 
                     Subject(name,url, BASE_URL+icon)
                 }
 
                 listener(Result.success(subjects))
-            }catch (e:Exception){
+            }catch (e:IOException){
                 listener(Result.failure(e))
             }
             return emptyList()

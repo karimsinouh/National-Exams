@@ -42,6 +42,7 @@ class MainViewModel @Inject constructor(
     }
 
     private fun loadSubjects()=viewModelScope.launch {
+        delay(500)
         repo.getSubjects{
 
             it.onSuccess {
