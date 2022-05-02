@@ -1,18 +1,18 @@
 <resources>
-    <string name="app_name">National Exams</string>
-    <string name="home">Home</string>
-    <string name="downloads">Downloads</string>
-    <string name="more">More</string>
-    <string name="exams">Exams</string>
-    <string name="error_happened">Something Went Wrong</string>
-    <string name="got_it">Got it</string>
+    <string name="app_name">الإمتحانات الوطنية</string>
+    <string name="home">المواد</string>
+    <string name="downloads">التحميلات</string>
+    <string name="more">المزيد</string>
+    <string name="exams">الإمتحانات</string>
+    <string name="error_happened">حدث خطأ ما</string>
+    <string name="got_it">حسنا</string>
     <string name="normal">الدورة العادية</string>
     <string name="rattrapage">الدورة الإستدراكية</string>
-    <string name="try_again">Please try again later</string>
-    <string name="downloading_exam">Downloading Exam…</string>
-    <string name="couldnt_download">Couldn\'t download this Exam, try again later</string>
-    <string name="no_downloads">You haven\'t downloaded any exams yet</string>
+    <string name="try_again">المرجو المحاولة مرة أخرى لاحقا</string>
+    <string name="downloading_exam">جاري تحميل الإمتحان</string>
+    <string name="couldnt_download">حدث خطأ ما خلال تحميل الإمتحان. المرجو المحاولة لاحقا</string>
+    <string name="no_downloads">لم يتم تحميل أي امتحان بعد</string>
     <string name="offline">Offline</string>
-    <string name="rate">Rate</string>
+    <string name="rate">تقييم</string>
     <string name="app_description">التطبيق يحتوي على جميع الإمتحانات الوطنية للسنوات السابقة مع التصحيح لجميع الشعب العلمية و الأدبية ثانية باك. </string>
 </resources>
