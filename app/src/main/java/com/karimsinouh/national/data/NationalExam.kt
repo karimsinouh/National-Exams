@@ -1,6 +1,6 @@
 package com.karimsinouh.national.data
 
-data class Exam(
+data class NationalExam(
     val name:String,
     val normal:String?,
     val rattrapage:String?

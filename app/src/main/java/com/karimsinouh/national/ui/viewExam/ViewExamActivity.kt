@@ -12,11 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.stringResource
 import com.karimsinouh.national.R
-import com.karimsinouh.national.data.Exam
+import com.karimsinouh.national.data.NationalExam
 import com.karimsinouh.national.ui.theme.NationalTheme
 import com.karimsinouh.national.util.ScreenState
 import com.karimsinouh.national.util.ads.AnchoredAdaptiveBanner
-import com.karimsinouh.national.util.ads.Banner
 import com.karimsinouh.national.util.reusableComposables.CenterProgress
 import com.karimsinouh.national.util.reusableComposables.MessageScreen
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,7 +25,7 @@ class ViewExamActivity: ComponentActivity() {
 
     companion object{
 
-        fun open(context:Context,exam:Exam,normal:Boolean){
+        fun open(context:Context, exam:NationalExam, normal:Boolean){
             val intent= Intent(context,ViewExamActivity::class.java)
             intent.apply {
                 val term=if (normal) context.getString(R.string.normal) else context.getString(R.string.rattrapage)

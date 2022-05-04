@@ -1,14 +1,12 @@
-package com.karimsinouh.national.data.source
+package com.karimsinouh.national.data.nationalExams
 
 import android.os.AsyncTask
-import android.util.Log
 import com.karimsinouh.national.data.Subject
 import okio.IOException
 import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
 import javax.inject.Inject
 
-class GetSubjects @Inject constructor() {
+class GetNationalSubjects @Inject constructor() {
 
 
 

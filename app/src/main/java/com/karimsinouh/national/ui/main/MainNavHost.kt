@@ -6,11 +6,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.navArgs
 import androidx.navigation.navArgument
 import com.karimsinouh.national.R
 import com.karimsinouh.national.ui.downloads.Downloads
-import com.karimsinouh.national.ui.exams.Exams
+import com.karimsinouh.national.ui.nationalExams.NationalExams
 import com.karimsinouh.national.ui.home.Home
 import com.karimsinouh.national.ui.menu.Menu
 import com.karimsinouh.national.ui.viewOfflineExam.ViewOfflineExam
@@ -37,9 +36,9 @@ fun MainActivity.MainNavHost() {
             }
 
             composable(
-                route=Screens.Exams.route
+                route=Screens.NationalExams.route
             ){
-                Exams()
+                NationalExams()
             }
 
             composable(

@@ -4,15 +4,13 @@ import android.app.DownloadManager
 import android.content.Context
 import android.net.Uri
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.karimsinouh.national.data.Exam
 import com.karimsinouh.national.data.Subject
-import com.karimsinouh.national.data.source.ExamsRepository
+import com.karimsinouh.national.data.nationalExams.NationalExamsRepository
 import com.karimsinouh.national.util.ScreenState
 import com.karimsinouh.national.util.ads.GetAdRequest
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -23,7 +21,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val repo: ExamsRepository,
+    private val repo: NationalExamsRepository,
     private val downloadManager: DownloadManager,
     @ApplicationContext private val context:Context
 ) :ViewModel() {

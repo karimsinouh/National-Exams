@@ -20,7 +20,7 @@ sealed class Screens(
     object Home:Screens("home", R.string.home, Icons.Default.Home)
     object Downloads:Screens("downloads", R.string.downloads, drawable = R.drawable.ic_download)
     object Menu:Screens("menu",R.string.more,Icons.Default.Menu)
-    object Exams:Screens("exams",R.string.exams)
+    object NationalExams:Screens("exams",R.string.national_exams)
     object ViewOfflineExam:Screens("offlineExams/{id}",R.string.offline){
         fun constructRoute(id:Long)="offlineExams/$id"
     }

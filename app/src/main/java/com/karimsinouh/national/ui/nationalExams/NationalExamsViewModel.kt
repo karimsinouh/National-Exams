@@ -1,4 +1,4 @@
-package com.karimsinouh.national.ui.exams
+package com.karimsinouh.national.ui.nationalExams
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
@@ -6,8 +6,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.karimsinouh.national.data.Exam
-import com.karimsinouh.national.data.source.GetExams
+import com.karimsinouh.national.data.NationalExam
+import com.karimsinouh.national.data.nationalExams.GetNationalExams
 import com.karimsinouh.national.util.ScreenState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
@@ -15,11 +15,11 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ExamsViewModel @Inject constructor(
-    private val repo:GetExams
+class NationalExamsViewModel @Inject constructor(
+    private val repo:GetNationalExams
 ):ViewModel() {
 
-    val exams = mutableStateListOf<Exam>()
+    val exams = mutableStateListOf<NationalExam>()
     var examsState by mutableStateOf(ScreenState.PROGRESS)
 
     fun loadExams(url:String?)=viewModelScope.launch{

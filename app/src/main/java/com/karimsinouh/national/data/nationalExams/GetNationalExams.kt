@@ -1,27 +1,26 @@
-package com.karimsinouh.national.data.source
+package com.karimsinouh.national.data.nationalExams
 
 import android.os.AsyncTask
-import android.util.Log
-import com.karimsinouh.national.data.Exam
+import com.karimsinouh.national.data.NationalExam
 import okio.IOException
 import org.jsoup.Jsoup
 import javax.inject.Inject
 
-class GetExams @Inject constructor() {
+class GetNationalExams @Inject constructor() {
 
     operator fun invoke(
         url: String,
-        listener:(Result<List<Exam>>)->Unit
+        listener:(Result<List<NationalExam>>)->Unit
     ){
         val executer=Execute(url,listener)
         executer.execute()
     }
 
 
-    private inner class Execute(private val url:String,private val listener: (Result<List<Exam>>) -> Unit)
-        :AsyncTask<Void,Void,List<Exam>>(){
+    private inner class Execute(private val url:String,private val listener: (Result<List<NationalExam>>) -> Unit)
+        :AsyncTask<Void,Void,List<NationalExam>>(){
 
-        override fun doInBackground(vararg p0: Void?): List<Exam> {
+        override fun doInBackground(vararg p0: Void?): List<NationalExam> {
 
             try {
 
@@ -57,7 +56,7 @@ class GetExams @Inject constructor() {
                         null
                     }
 
-                    Exam(
+                    NationalExam(
                         name=name?:"NOT AVAILABLE",
                         normal = normal,
                         rattrapage = rattrapage
